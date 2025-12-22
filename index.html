@@ -60,6 +60,10 @@
       #mobile-menu.active {
         max-height: 300px;
       }
+
+      #nav {
+        background-color: #ffffff !important;
+      }
     </style>
     <style>
       @view-transition {
@@ -74,6 +78,7 @@
       <nav
         id="nav"
         class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style="background-color: #ffffff"
       >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
           <div class="flex justify-between items-center">
@@ -133,19 +138,20 @@
       <section
         id="hero"
         class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24"
+        style="background-color: #f4c430"
       >
         <div class="max-w-4xl text-center fade-in">
           <h1
             id="hero-title"
             class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-4 sm:mb-6 tracking-tight"
           >
-            Diseño minimalista en madera
+            Diseño minimalista
           </h1>
           <p
             id="hero-subtitle"
             class="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 opacity-80"
           >
-            Muebles que transforman espacios en experiencias únicas
+            Muebles y decoración que transforman espacios en experiencias únicas
           </p>
           <button
             id="cta-button"
@@ -156,7 +162,11 @@
         </div>
       </section>
       <!-- About Section -->
-      <section id="nosotros" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+      <section
+        id="nosotros"
+        class="py-16 sm:py-20 md:py-24 px-4 sm:px-6"
+        style="background-color: #e63946"
+      >
         <div
           class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center"
         >
@@ -171,12 +181,13 @@
               id="about-text"
               class="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6"
             >
-              Creamos piezas únicas que combinan la calidez natural de la madera
-              con líneas limpias y funcionalidad moderna. Cada mueble es una
-              obra de arte diseñada para perdurar.
+              Creamos piezas únicas que combinan la calidez natural con líneas
+              limpias y funcionalidad moderna. Cada mueble es una obra de arte
+              diseñada para perdurar.Nos inspiramos en La bauhaus y el bordado
+              japones Sashiko.
             </p>
             <p class="text-base sm:text-lg leading-relaxed opacity-80">
-              Trabajamos con maderas sostenibles y técnicas artesanales que
+              Trabajamos con materiales sostenibles y técnicas artesanales que
               respetan tanto el material como el medio ambiente.
             </p>
           </div>
@@ -194,7 +205,11 @@
         </div>
       </section>
       <!-- Gallery Section -->
-      <section id="coleccion" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+      <section
+        id="coleccion"
+        class="py-16 sm:py-20 md:py-24 px-4 sm:px-6"
+        style="background-color: #0a7ea4"
+      >
         <div class="max-w-7xl mx-auto">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div
@@ -404,7 +419,11 @@
         </div>
       </section>
       <!-- Contact Section -->
-      <section id="contacto" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+      <section
+        id="contacto"
+        class="py-16 sm:py-20 md:py-24 px-4 sm:px-6"
+        style="background-color: #f4c430"
+      >
         <div class="max-w-6xl mx-auto">
           <h2
             id="contact-title"
@@ -620,7 +639,8 @@
       <footer id="footer" class="py-8 sm:py-10 md:py-12 px-4 sm:px-6 border-t">
         <div class="max-w-7xl mx-auto text-center">
           <p id="footer-text" class="opacity-70 text-sm sm:text-base">
-            © 2024 Muebles Minimalistas. Diseño artesanal con madera sostenible.
+            © 2024 Muebles Minimalistas. Diseño artesanal sostenible creados por
+            Clancy Pink Punk y Delulu Future Dev.
           </p>
         </div>
       </footer>
@@ -651,21 +671,16 @@
         const baseFontStack = "Arial, sans-serif";
         const baseSize = config.font_size || defaultConfig.font_size;
 
-        // Background colors - Fixed Bauhaus color scheme by section (not affected by config changes)
+        // Background colors
         document.getElementById("app").style.backgroundColor =
           config.background_color || defaultConfig.background_color;
-        document.getElementById("hero").style.backgroundColor = "#f4c430"; // Yellow Bauhaus - FIXED
-        document.getElementById("nosotros").style.backgroundColor = "#e63946"; // Red Bauhaus - FIXED
-        document.getElementById("coleccion").style.backgroundColor = "#0a7ea4"; // Blue Bauhaus - FIXED
-        document.getElementById("contacto").style.backgroundColor = "#f4c430"; // Yellow Bauhaus - FIXED
         document.getElementById("footer").style.backgroundColor =
-          config.background_color || defaultConfig.background_color; // Beige
+          config.background_color || defaultConfig.background_color;
         document.getElementById("footer").style.borderTopColor =
           config.text_color || defaultConfig.text_color;
 
-        // Navigation
-        document.getElementById("nav").style.backgroundColor =
-          (config.background_color || defaultConfig.background_color) + "f5";
+        // Navigation - white background
+        document.getElementById("nav").style.backgroundColor = "#ffffff";
 
         const navLinks = document.querySelectorAll("nav a");
         navLinks.forEach((link) => {
@@ -1134,7 +1149,7 @@
         envio:
           "Realizamos envíos a toda la República Mexicana. El costo depende de tu ubicación.",
         catalogo:
-          "Puedes ver nuestra galería en esta misma página. ¡Despl��zate hacia arriba!",
+          "Puedes ver nuestra galería en esta misma página. ¡Desplázate hacia arriba!",
         muebles:
           "Ofrecemos mesas, sillas y estanterías de diseño minimalista en madera natural.",
         madera: "Trabajamos con roble, nogal y fresno de origen sostenible.",
@@ -1244,7 +1259,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'9b21feb036c6eef2',t:'MTc2NjQzMTQxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9b220f4c1771eef2',t:'MTc2NjQzMjA5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
