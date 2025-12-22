@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muebles de Madera Minimalista</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .smooth-scroll {
+        scroll-behavior: smooth;
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="h-full smooth-scroll">
+    <div id="app" class="w-full h-full overflow-auto">
+      <!-- Navigation -->
+      <nav
+        id="nav"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+        >
+          <div id="logo" class="text-2xl font-bold tracking-wider">MINIMA</div>
+          <div class="flex gap-8">
+            <a href="#coleccion" class="hover:opacity-70 transition-opacity"
+              >Colección</a
+            >
+            <a href="#nosotros" class="hover:opacity-70 transition-opacity"
+              >Nosotros</a
+            >
+            <a href="#contacto" class="hover:opacity-70 transition-opacity"
+              >Contacto</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="min-h-screen flex items-center justify-center px-6 pt-20"
+      >
+        <div class="max-w-4xl text-center fade-in">
+          <h1
+            id="hero-title"
+            class="text-6xl md:text-7xl font-light mb-6 tracking-tight"
+          >
+            Diseño minimalista en madera
+          </h1>
+          <p id="hero-subtitle" class="text-xl md:text-2xl mb-12 opacity-80">
+            Muebles que transforman espacios en experiencias únicas
+          </p>
+          <button
+            id="cta-button"
+            class="px-8 py-4 text-lg font-medium rounded-none transition-all duration-300 hover:opacity-90 hover:scale-105"
+          >
+            Explorar Colección
+          </button>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="nosotros" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 id="about-title" class="text-4xl font-light mb-6">
+              Nuestra Filosofía
+            </h2>
+            <p id="about-text" class="text-lg leading-relaxed mb-6">
+              Creamos piezas únicas que combinan la calidez natural de la madera
+              con líneas limpias y funcionalidad moderna. Cada mueble es una
+              obra de arte diseñada para perdurar.
+            </p>
+            <p class="text-lg leading-relaxed opacity-80">
+              Trabajamos con maderas sostenibles y técnicas artesanales que
+              respetan tanto el material como el medio ambiente.
+            </p>
+          </div>
+          <div
+            id="about-visual"
+            class="aspect-square flex items-center justify-center"
+          >
+            <svg viewbox="0 0 200 200" class="w-full h-full p-8">
+              <circle cx="100" cy="70" r="35" fill="#e63946" opacity="0.9" />
+              <rect
+                x="50"
+                y="120"
+                width="50"
+                height="50"
+                fill="#457b9d"
+                opacity="0.9"
+              />
+              <polygon
+                points="140,120 165,170 115,170"
+                fill="#f1c40f"
+                opacity="0.9"
+              />
+              <rect
+                x="20"
+                y="20"
+                width="160"
+                height="160"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+      <!-- Products Section -->
+      <section id="coleccion" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-5xl font-light mb-16 text-center">
+            Colección Destacada
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="product-card hover-lift overflow-hidden">
+              <div
+                class="aspect-square flex items-center justify-center p-12"
+                style="
+                  background: linear-gradient(135deg, #fef9e7 0%, #fff 100%);
+                "
+              >
+                <svg viewbox="0 0 200 200" class="w-full h-full">
+                  <rect x="30" y="70" width="140" height="12" fill="#1a1a1a" />
+                  <rect x="40" y="82" width="12" height="70" fill="#e63946" />
+                  <rect x="90" y="82" width="12" height="70" fill="#457b9d" />
+                  <rect x="140" y="82" width="12" height="70" fill="#f1c40f" />
+                  <circle cx="46" cy="157" r="8" fill="#1a1a1a" />
+                  <circle cx="96" cy="157" r="8" fill="#1a1a1a" />
+                  <circle cx="146" cy="157" r="8" fill="#1a1a1a" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 id="product-1-name" class="text-2xl font-light mb-2">
+                  Mesa Oslo
+                </h3>
+                <p class="opacity-70">Roble natural</p>
+              </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card hover-lift overflow-hidden">
+              <div
+                class="aspect-square flex items-center justify-center p-12"
+                style="
+                  background: linear-gradient(135deg, #fef9e7 0%, #fff 100%);
+                "
+              >
+                <svg viewbox="0 0 200 200" class="w-full h-full">
+                  <rect
+                    x="60"
+                    y="50"
+                    width="80"
+                    height="70"
+                    rx="4"
+                    fill="#457b9d"
+                    opacity="0.9"
+                  />
+                  <rect x="70" y="120" width="14" height="60" fill="#e63946" />
+                  <rect x="116" y="120" width="14" height="60" fill="#e63946" />
+                  <rect x="50" y="115" width="100" height="10" fill="#f1c40f" />
+                  <circle cx="77" cy="70" r="6" fill="#fef9e7" />
+                  <circle cx="123" cy="70" r="6" fill="#fef9e7" />
+                  <rect
+                    x="85"
+                    y="85"
+                    width="30"
+                    height="3"
+                    fill="#fef9e7"
+                    rx="2"
+                  />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 id="product-2-name" class="text-2xl font-light mb-2">
+                  Silla Zen
+                </h3>
+                <p class="opacity-70">Nogal oscuro</p>
+              </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card hover-lift overflow-hidden">
+              <div
+                class="aspect-square flex items-center justify-center p-12"
+                style="
+                  background: linear-gradient(135deg, #fef9e7 0%, #fff 100%);
+                "
+              >
+                <svg viewbox="0 0 200 200" class="w-full h-full">
+                  <rect
+                    x="45"
+                    y="40"
+                    width="110"
+                    height="120"
+                    fill="none"
+                    stroke="#1a1a1a"
+                    stroke-width="4"
+                  />
+                  <rect x="45" y="70" width="110" height="3" fill="#e63946" />
+                  <rect x="45" y="115" width="110" height="3" fill="#457b9d" />
+                  <rect x="40" y="35" width="10" height="130" fill="#f1c40f" />
+                  <rect x="150" y="35" width="10" height="130" fill="#f1c40f" />
+                  <circle cx="80" cy="52" r="8" fill="#e63946" />
+                  <rect
+                    x="105"
+                    y="85"
+                    width="35"
+                    height="20"
+                    fill="#457b9d"
+                    opacity="0.7"
+                  />
+                </svg>
+              </div>
+              <div class="p-6">
+                <h3 id="product-3-name" class="text-2xl font-light mb-2">
+                  Estantería Nordic
+                </h3>
+                <p class="opacity-70">Fresno claro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contacto" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+          <h2 id="contact-title" class="text-4xl font-bold mb-12 text-center">
+            Contáctanos
+          </h2>
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-2xl font-bold mb-4">Información de Contacto</h3>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3">
+                    <svg
+                      class="w-6 h-6 mt-1 flex-shrink-0"
+                      fill="currentColor"
+                      viewbox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <div>
+                      <p class="font-bold">Dirección:</p>
+                      <p>Toltecas 166</p>
+                      <p>San Pedro de los Pinos</p>
+                      <p>Ciudad de México, 01180</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      class="w-6 h-6 flex-shrink-0"
+                      fill="currentColor"
+                      viewbox="0 0 20 20"
+                    >
+                      <path
+                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                      />
+                    </svg>
+                    <div>
+                      <p class="font-bold">Teléfono:</p>
+                      <p>56 1067 7516</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <svg
+                      class="w-6 h-6 flex-shrink-0"
+                      fill="currentColor"
+                      viewbox="0 0 20 20"
+                    >
+                      <path
+                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                      />
+                      <path
+                        d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                      />
+                    </svg>
+                    <div>
+                      <p class="font-bold">Email:</p>
+                      <p>info@minima.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Social Media -->
+              <div>
+                <h3 class="text-2xl font-bold mb-4">Redes Sociales</h3>
+                <div class="flex flex-wrap gap-4">
+                  <a
+                    href="https://www.tiktok.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    title="TikTok"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"
+                      /></svg
+                  ></a>
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    title="Instagram"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      /></svg
+                  ></a>
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    title="Facebook"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                      /></svg
+                  ></a>
+                  <a
+                    href="https://www.pinterest.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    title="Pinterest"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+                      /></svg
+                  ></a>
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    title="GitHub"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewbox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      /></svg
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Chat Bot Widget -->
+            <div
+              id="bot-widget"
+              class="rounded-none border-4 overflow-hidden flex flex-col h-[500px]"
+            >
+              <div id="bot-header" class="p-4 flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold">Asistente Virtual</p>
+                  <p class="text-sm opacity-80">En línea</p>
+                </div>
+              </div>
+              <div
+                id="bot-messages"
+                class="flex-1 p-4 overflow-y-auto space-y-3"
+              >
+                <div class="flex gap-2">
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold"
+                  >
+                    AI
+                  </div>
+                  <div class="bot-message max-w-[80%] p-3 rounded-lg">
+                    <p class="text-sm">
+                      ¡Hola! 👋 Bienvenido a MINIMA. ¿En qué puedo ayudarte hoy?
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 border-t">
+                <form id="bot-form" class="flex gap-2">
+                  <input
+                    type="text"
+                    id="bot-input"
+                    placeholder="Escribe tu mensaje..."
+                    class="flex-1 px-4 py-2 border-2 rounded-none focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    class="bot-send-button px-6 py-2 rounded-none transition-all duration-300 hover:opacity-90"
+                  >
+                    Enviar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer id="footer" class="py-12 px-6 border-t">
+        <div class="max-w-7xl mx-auto text-center">
+          <p id="footer-text" class="opacity-70">
+            © 2024 Muebles Minimalistas. Diseño artesanal con madera sostenible.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const defaultConfig = {
+        background_color: "#fef9e7",
+        surface_color: "#ffffff",
+        text_color: "#1a1a1a",
+        primary_action_color: "#e63946",
+        secondary_action_color: "#457b9d",
+        font_family: "Montserrat",
+        font_size: 16,
+        hero_title: "Diseño minimalista en madera",
+        hero_subtitle:
+          "Muebles que transforman espacios en experiencias únicas",
+        cta_button: "Explorar Colección",
+        about_title: "Nuestra Filosofía",
+        about_text:
+          "Creamos piezas únicas que combinan la calidez natural de la madera con líneas limpias y funcionalidad moderna. Cada mueble es una obra de arte diseñada para perdurar.",
+        product_1_name: "Mesa Oslo",
+        product_2_name: "Silla Zen",
+        product_3_name: "Estantería Nordic",
+        contact_title: "Contáctanos",
+        footer_text:
+          "© 2024 Muebles Minimalistas. Diseño artesanal con madera sostenible.",
+      };
+
+      async function onConfigChange(config) {
+        const customFont = config.font_family || defaultConfig.font_family;
+        const baseFontStack = "Arial, sans-serif";
+        const baseSize = config.font_size || defaultConfig.font_size;
+
+        // Background colors
+        document.getElementById("app").style.backgroundColor =
+          config.background_color || defaultConfig.background_color;
+        document.getElementById("hero").style.backgroundColor =
+          config.background_color || defaultConfig.background_color;
+        document.getElementById("nosotros").style.backgroundColor =
+          config.surface_color || defaultConfig.surface_color;
+        document.getElementById("coleccion").style.backgroundColor =
+          config.background_color || defaultConfig.background_color;
+        document.getElementById("contacto").style.backgroundColor =
+          config.surface_color || defaultConfig.surface_color;
+        document.getElementById("footer").style.backgroundColor =
+          config.background_color || defaultConfig.background_color;
+        document.getElementById("footer").style.borderTopColor =
+          config.secondary_action_color || defaultConfig.secondary_action_color;
+
+        // Navigation
+        document.getElementById("nav").style.backgroundColor =
+          (config.background_color || defaultConfig.background_color) + "f0";
+        document.getElementById("logo").style.color =
+          config.text_color || defaultConfig.text_color;
+        document.getElementById(
+          "logo"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("logo").style.fontSize = `${baseSize * 1.5}px`;
+
+        const navLinks = document.querySelectorAll("nav a");
+        navLinks.forEach((link) => {
+          link.style.color = config.text_color || defaultConfig.text_color;
+          link.style.fontFamily = `${customFont}, ${baseFontStack}`;
+          link.style.fontSize = `${baseSize}px`;
+        });
+
+        // Hero section
+        document.getElementById("hero-title").textContent =
+          config.hero_title || defaultConfig.hero_title;
+        document.getElementById("hero-title").style.color =
+          config.text_color || defaultConfig.text_color;
+        document.getElementById(
+          "hero-title"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("hero-title").style.fontSize = `${
+          baseSize * 3.5
+        }px`;
+
+        document.getElementById("hero-subtitle").textContent =
+          config.hero_subtitle || defaultConfig.hero_subtitle;
+        document.getElementById("hero-subtitle").style.color =
+          config.text_color || defaultConfig.text_color;
+        document.getElementById(
+          "hero-subtitle"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("hero-subtitle").style.fontSize = `${
+          baseSize * 1.25
+        }px`;
+
+        document.getElementById("cta-button").textContent =
+          config.cta_button || defaultConfig.cta_button;
+        document.getElementById("cta-button").style.backgroundColor =
+          config.primary_action_color || defaultConfig.primary_action_color;
+        document.getElementById("cta-button").style.color =
+          config.surface_color || defaultConfig.surface_color;
+        document.getElementById(
+          "cta-button"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("cta-button").style.fontSize = `${
+          baseSize * 1.125
+        }px`;
+
+        // About section
+        document.getElementById("about-title").textContent =
+          config.about_title || defaultConfig.about_title;
+        document.getElementById("about-title").style.color =
+          config.text_color || defaultConfig.text_color;
+        document.getElementById(
+          "about-title"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("about-title").style.fontSize = `${
+          baseSize * 2.5
+        }px`;
+
+        document.getElementById("about-text").textContent =
+          config.about_text || defaultConfig.about_text;
+        document.getElementById("about-text").style.color =
+          config.text_color || defaultConfig.text_color;
+        document.getElementById(
+          "about-text"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("about-text").style.fontSize = `${
+          baseSize * 1.125
+        }px`;
+
+        document.getElementById("about-visual").style.backgroundColor =
+          config.background_color || defaultConfig.background_color;
+        document.getElementById("about-visual").style.color =
+          config.primary_action_color || defaultConfig.primary_action_color;
+
+        // Products section
+        const productCards = document.querySelectorAll(".product-card");
+        productCards.forEach((card) => {
+          card.style.backgroundColor =
+            config.surface_color || defaultConfig.surface_color;
+          card.style.color = config.text_color || defaultConfig.text_color;
+          card.style.border = `3px solid ${
+            config.text_color || defaultConfig.text_color
+          }`;
+        });
+
+        document.getElementById("product-1-name").textContent =
+          config.product_1_name || defaultConfig.product_1_name;
+        document.getElementById(
+          "product-1-name"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("product-1-name").style.fontSize = `${
+          baseSize * 1.5
+        }px`;
+
+        document.getElementById("product-2-name").textContent =
+          config.product_2_name || defaultConfig.product_2_name;
+        document.getElementById(
+          "product-2-name"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("product-2-name").style.fontSize = `${
+          baseSize * 1.5
+        }px`;
+
+        document.getElementById("product-3-name").textContent =
+          config.product_3_name || defaultConfig.product_3_name;
+        document.getElementById(
+          "product-3-name"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("product-3-name").style.fontSize = `${
+          baseSize * 1.5
+        }px`;
+
+        const productDescriptions =
+          document.querySelectorAll(".product-card p");
+        productDescriptions.forEach((p) => {
+          p.style.fontFamily = `${customFont}, ${baseFontStack}`;
+          p.style.fontSize = `${baseSize}px`;
+        });
+
+        const collectionTitle = document.querySelector("#coleccion h2");
+        collectionTitle.style.color =
+          config.text_color || defaultConfig.text_color;
+        collectionTitle.style.fontFamily = `${customFont}, ${baseFontStack}`;
+        collectionTitle.style.fontSize = `${baseSize * 3}px`;
+
+        // Contact section
+        document.getElementById("contact-title").textContent =
+          config.contact_title || defaultConfig.contact_title;
+        document.getElementById("contact-title").style.color =
+          config.text_color || defaultConfig.text_color;
+        document.getElementById(
+          "contact-title"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("contact-title").style.fontSize = `${
+          baseSize * 2.5
+        }px`;
+
+        // Contact info styling
+        const contactSection = document.getElementById("contacto");
+        const contactHeaders = contactSection.querySelectorAll("h3");
+        contactHeaders.forEach((header) => {
+          header.style.color = config.text_color || defaultConfig.text_color;
+          header.style.fontFamily = `${customFont}, ${baseFontStack}`;
+          header.style.fontSize = `${baseSize * 1.5}px`;
+        });
+
+        const contactInfo = contactSection.querySelectorAll(
+          ".space-y-4 p, .space-y-4 div p"
+        );
+        contactInfo.forEach((p) => {
+          p.style.color = config.text_color || defaultConfig.text_color;
+          p.style.fontFamily = `${customFont}, ${baseFontStack}`;
+          p.style.fontSize = `${baseSize}px`;
+        });
+
+        const contactIcons = contactSection.querySelectorAll("svg");
+        contactIcons.forEach((icon) => {
+          if (!icon.closest(".social-button") && !icon.closest("#bot-widget")) {
+            icon.style.color =
+              config.primary_action_color || defaultConfig.primary_action_color;
+          }
+        });
+
+        // Social buttons
+        const socialButtons = document.querySelectorAll(".social-button");
+        socialButtons.forEach((btn) => {
+          btn.style.backgroundColor =
+            config.primary_action_color || defaultConfig.primary_action_color;
+          btn.style.color = config.surface_color || defaultConfig.surface_color;
+        });
+
+        // Bot widget
+        const botWidget = document.getElementById("bot-widget");
+        botWidget.style.backgroundColor =
+          config.surface_color || defaultConfig.surface_color;
+        botWidget.style.borderColor =
+          config.text_color || defaultConfig.text_color;
+
+        const botHeader = document.getElementById("bot-header");
+        botHeader.style.backgroundColor =
+          config.primary_action_color || defaultConfig.primary_action_color;
+        botHeader.style.color =
+          config.surface_color || defaultConfig.surface_color;
+
+        const botMessages = document.getElementById("bot-messages");
+        botMessages.style.backgroundColor =
+          config.background_color || defaultConfig.background_color;
+
+        const botMessage = document.querySelectorAll(".bot-message");
+        botMessage.forEach((msg) => {
+          msg.style.backgroundColor =
+            config.surface_color || defaultConfig.surface_color;
+          msg.style.color = config.text_color || defaultConfig.text_color;
+          msg.style.border = `2px solid ${
+            config.secondary_action_color ||
+            defaultConfig.secondary_action_color
+          }`;
+          msg.style.fontFamily = `${customFont}, ${baseFontStack}`;
+          msg.style.fontSize = `${baseSize * 0.875}px`;
+        });
+
+        const userMessage = document.querySelectorAll(".user-message");
+        userMessage.forEach((msg) => {
+          msg.style.backgroundColor =
+            config.secondary_action_color ||
+            defaultConfig.secondary_action_color;
+          msg.style.color = config.text_color || defaultConfig.text_color;
+          msg.style.fontFamily = `${customFont}, ${baseFontStack}`;
+          msg.style.fontSize = `${baseSize * 0.875}px`;
+        });
+
+        const botInput = document.getElementById("bot-input");
+        botInput.style.borderColor =
+          config.secondary_action_color || defaultConfig.secondary_action_color;
+        botInput.style.color = config.text_color || defaultConfig.text_color;
+        botInput.style.fontFamily = `${customFont}, ${baseFontStack}`;
+        botInput.style.fontSize = `${baseSize}px`;
+
+        const botSendButton = document.querySelector(".bot-send-button");
+        botSendButton.style.backgroundColor =
+          config.primary_action_color || defaultConfig.primary_action_color;
+        botSendButton.style.color =
+          config.surface_color || defaultConfig.surface_color;
+        botSendButton.style.fontFamily = `${customFont}, ${baseFontStack}`;
+        botSendButton.style.fontSize = `${baseSize}px`;
+
+        const botHeaderIcon = botHeader.querySelector(".w-10");
+        botHeaderIcon.style.backgroundColor =
+          config.secondary_action_color || defaultConfig.secondary_action_color;
+
+        const botAvatars = document.querySelectorAll("#bot-messages .w-8");
+        botAvatars.forEach((avatar) => {
+          avatar.style.backgroundColor =
+            config.secondary_action_color ||
+            defaultConfig.secondary_action_color;
+        });
+
+        // Footer
+        document.getElementById("footer-text").textContent =
+          config.footer_text || defaultConfig.footer_text;
+        document.getElementById("footer-text").style.color =
+          config.text_color || defaultConfig.text_color;
+        document.getElementById(
+          "footer-text"
+        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.getElementById("footer-text").style.fontSize = `${baseSize}px`;
+      }
+
+      function mapToCapabilities(config) {
+        return {
+          recolorables: [
+            {
+              get: () =>
+                config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              },
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              },
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              },
+            },
+            {
+              get: () =>
+                config.primary_action_color ||
+                defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              },
+            },
+            {
+              get: () =>
+                config.secondary_action_color ||
+                defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              },
+            },
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            },
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            },
+          },
+        };
+      }
+
+      function mapToEditPanelValues(config) {
+        return new Map([
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          [
+            "hero_subtitle",
+            config.hero_subtitle || defaultConfig.hero_subtitle,
+          ],
+          ["cta_button", config.cta_button || defaultConfig.cta_button],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["about_text", config.about_text || defaultConfig.about_text],
+          [
+            "product_1_name",
+            config.product_1_name || defaultConfig.product_1_name,
+          ],
+          [
+            "product_2_name",
+            config.product_2_name || defaultConfig.product_2_name,
+          ],
+          [
+            "product_3_name",
+            config.product_3_name || defaultConfig.product_3_name,
+          ],
+          [
+            "contact_title",
+            config.contact_title || defaultConfig.contact_title,
+          ],
+          ["footer_text", config.footer_text || defaultConfig.footer_text],
+        ]);
+      }
+
+      // Initialize SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues,
+        });
+      }
+
+      // Smooth scroll for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // CTA button scroll
+      document
+        .getElementById("cta-button")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document
+            .getElementById("coleccion")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+
+      // Chat Bot Functionality
+      const botForm = document.getElementById("bot-form");
+      const botInput = document.getElementById("bot-input");
+      const botMessagesContainer = document.getElementById("bot-messages");
+
+      const botResponses = {
+        hola: "¡Hola! 👋 Estoy aquí para ayudarte con tus dudas sobre nuestros muebles.",
+        horario:
+          "Nuestro horario de atención es de Lunes a Viernes de 9:00 AM a 6:00 PM.",
+        direccion:
+          "Nos encontramos en Toltecas 166, San Pedro de los Pinos, Ciudad de México, 01180.",
+        telefono: "Puedes llamarnos al 56 1067 7516.",
+        email: "Escríbenos a info@minima.com",
+        precio:
+          "Los precios varían según el modelo. Contáctanos para recibir una cotización personalizada.",
+        envio:
+          "Realizamos envíos a toda la República Mexicana. El costo depende de tu ubicación.",
+        catalogo:
+          "Puedes ver nuestra colección destacada en esta misma página. ¡Desplázate hacia arriba!",
+        muebles:
+          "Ofrecemos mesas, sillas y estanterías de diseño minimalista en madera natural.",
+        madera: "Trabajamos con roble, nogal y fresno de origen sostenible.",
+        garantia:
+          "Todos nuestros muebles tienen garantía de 2 años contra defectos de fabricación.",
+        default:
+          "Gracias por tu mensaje. Para más información específica, llámanos al 56 1067 7516 o escríbenos a info@minima.com 📧",
+      };
+
+      function addMessage(text, isUser = false) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = "flex gap-2" + (isUser ? " justify-end" : "");
+
+        const avatar = document.createElement("div");
+        avatar.className =
+          "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold";
+        avatar.textContent = isUser ? "TÚ" : "AI";
+
+        const bubble = document.createElement("div");
+        bubble.className =
+          (isUser ? "user-message" : "bot-message") +
+          " max-w-[80%] p-3 rounded-lg";
+
+        const paragraph = document.createElement("p");
+        paragraph.className = "text-sm";
+        paragraph.textContent = text;
+
+        bubble.appendChild(paragraph);
+
+        if (isUser) {
+          messageDiv.appendChild(bubble);
+          messageDiv.appendChild(avatar);
+        } else {
+          messageDiv.appendChild(avatar);
+          messageDiv.appendChild(bubble);
+        }
+
+        botMessagesContainer.appendChild(messageDiv);
+        botMessagesContainer.scrollTop = botMessagesContainer.scrollHeight;
+
+        // Apply config styles to new messages
+        if (window.elementSdk && window.elementSdk.config) {
+          const config = window.elementSdk.config;
+          const customFont = config.font_family || defaultConfig.font_family;
+          const baseFontStack = "Arial, sans-serif";
+          const baseSize = config.font_size || defaultConfig.font_size;
+
+          avatar.style.backgroundColor =
+            config.secondary_action_color ||
+            defaultConfig.secondary_action_color;
+          paragraph.style.fontFamily = `${customFont}, ${baseFontStack}`;
+          paragraph.style.fontSize = `${baseSize * 0.875}px`;
+
+          if (isUser) {
+            bubble.style.backgroundColor =
+              config.secondary_action_color ||
+              defaultConfig.secondary_action_color;
+            bubble.style.color = config.text_color || defaultConfig.text_color;
+          } else {
+            bubble.style.backgroundColor =
+              config.surface_color || defaultConfig.surface_color;
+            bubble.style.color = config.text_color || defaultConfig.text_color;
+            bubble.style.border = `2px solid ${
+              config.secondary_action_color ||
+              defaultConfig.secondary_action_color
+            }`;
+          }
+        }
+      }
+
+      function getBotResponse(userMessage) {
+        const message = userMessage.toLowerCase().trim();
+
+        for (const [key, response] of Object.entries(botResponses)) {
+          if (message.includes(key)) {
+            return response;
+          }
+        }
+
+        return botResponses.default;
+      }
+
+      botForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const userMessage = botInput.value.trim();
+        if (!userMessage) return;
+
+        // Add user message
+        addMessage(userMessage, true);
+
+        // Clear input
+        botInput.value = "";
+
+        // Simulate bot thinking
+        setTimeout(() => {
+          const botResponse = getBotResponse(userMessage);
+          addMessage(botResponse, false);
+        }, 500);
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9b219de3c58beef2',t:'MTc2NjQyNzQ1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
