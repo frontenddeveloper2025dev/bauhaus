@@ -50,6 +50,16 @@
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       }
+
+      #mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      #mobile-menu.active {
+        max-height: 300px;
+      }
     </style>
     <style>
       @view-transition {
@@ -65,225 +75,354 @@
         id="nav"
         class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       >
-        <div
-          class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
-        >
-          <div id="logo" class="text-2xl font-bold tracking-wider">MINIMA</div>
-          <div class="flex gap-8">
-            <a href="#coleccion" class="hover:opacity-70 transition-opacity"
-              >Colección</a
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
+          <div class="flex justify-between items-center">
+            <div id="logo" class="flex items-center gap-2">
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/minimo.png"
+                alt="MINIMA Logo"
+                class="h-16 sm:h-20 md:h-28 lg:h-32 w-auto"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 text-base">
+              <a href="#coleccion" class="hover:opacity-70 transition-opacity"
+                >Galería</a
+              >
+              <a href="#nosotros" class="hover:opacity-70 transition-opacity"
+                >Nosotros</a
+              >
+              <a href="#contacto" class="hover:opacity-70 transition-opacity"
+                >Contacto</a
+              >
+            </div>
+            <!-- Mobile Hamburger -->
+            <button
+              id="mobile-menu-button"
+              class="md:hidden flex flex-col gap-1.5 p-2"
             >
-            <a href="#nosotros" class="hover:opacity-70 transition-opacity"
-              >Nosotros</a
-            >
-            <a href="#contacto" class="hover:opacity-70 transition-opacity"
-              >Contacto</a
-            >
+              <span class="w-6 h-0.5 transition-all duration-300"></span>
+              <span class="w-6 h-0.5 transition-all duration-300"></span>
+              <span class="w-6 h-0.5 transition-all duration-300"></span>
+            </button>
+          </div>
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="md:hidden">
+            <div class="flex flex-col gap-4 pt-4 text-base">
+              <a
+                href="#coleccion"
+                class="hover:opacity-70 transition-opacity mobile-link"
+                >Galería</a
+              >
+              <a
+                href="#nosotros"
+                class="hover:opacity-70 transition-opacity mobile-link"
+                >Nosotros</a
+              >
+              <a
+                href="#contacto"
+                class="hover:opacity-70 transition-opacity mobile-link"
+                >Contacto</a
+              >
+            </div>
           </div>
         </div>
       </nav>
       <!-- Hero Section -->
       <section
         id="hero"
-        class="min-h-screen flex items-center justify-center px-6 pt-20"
+        class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-24"
       >
         <div class="max-w-4xl text-center fade-in">
           <h1
             id="hero-title"
-            class="text-6xl md:text-7xl font-light mb-6 tracking-tight"
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-4 sm:mb-6 tracking-tight"
           >
             Diseño minimalista en madera
           </h1>
-          <p id="hero-subtitle" class="text-xl md:text-2xl mb-12 opacity-80">
+          <p
+            id="hero-subtitle"
+            class="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 opacity-80"
+          >
             Muebles que transforman espacios en experiencias únicas
           </p>
           <button
             id="cta-button"
-            class="px-8 py-4 text-lg font-medium rounded-none transition-all duration-300 hover:opacity-90 hover:scale-105"
+            class="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium rounded-none transition-all duration-300 hover:opacity-90 hover:scale-105"
           >
-            Explorar Colección
+            Explorar Galería
           </button>
         </div>
       </section>
       <!-- About Section -->
-      <section id="nosotros" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <section id="nosotros" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+        <div
+          class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center"
+        >
           <div>
-            <h2 id="about-title" class="text-4xl font-light mb-6">
+            <h2
+              id="about-title"
+              class="text-3xl sm:text-4xl font-light mb-4 sm:mb-6"
+            >
               Nuestra Filosofía
             </h2>
-            <p id="about-text" class="text-lg leading-relaxed mb-6">
+            <p
+              id="about-text"
+              class="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6"
+            >
               Creamos piezas únicas que combinan la calidez natural de la madera
               con líneas limpias y funcionalidad moderna. Cada mueble es una
               obra de arte diseñada para perdurar.
             </p>
-            <p class="text-lg leading-relaxed opacity-80">
+            <p class="text-base sm:text-lg leading-relaxed opacity-80">
               Trabajamos con maderas sostenibles y técnicas artesanales que
               respetan tanto el material como el medio ambiente.
             </p>
           </div>
           <div
             id="about-visual"
-            class="aspect-square flex items-center justify-center"
+            class="aspect-square flex items-center justify-center overflow-hidden"
           >
-            <svg viewbox="0 0 200 200" class="w-full h-full p-8">
-              <circle cx="100" cy="70" r="35" fill="#e63946" opacity="0.9" />
-              <rect
-                x="50"
-                y="120"
-                width="50"
-                height="50"
-                fill="#457b9d"
-                opacity="0.9"
-              />
-              <polygon
-                points="140,120 165,170 115,170"
-                fill="#f1c40f"
-                opacity="0.9"
-              />
-              <rect
-                x="20"
-                y="20"
-                width="160"
-                height="160"
-                fill="none"
-                stroke="#1a1a1a"
-                stroke-width="2"
-              />
-            </svg>
+            <img
+              src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/Dise%C3%B1o%20sin%20t%C3%ADtulo.jpg"
+              alt="Nuestra Filosofía"
+              class="w-full h-full object-cover"
+              onerror="this.style.display='none';"
+            />
           </div>
         </div>
       </section>
-      <!-- Products Section -->
-      <section id="coleccion" class="py-24 px-6">
+      <!-- Gallery Section -->
+      <section id="coleccion" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto">
-          <h2 class="text-5xl font-light mb-16 text-center">
-            Colección Destacada
-          </h2>
-          <div class="grid md:grid-cols-3 gap-8">
-            <!-- Product 1 -->
-            <div class="product-card hover-lift overflow-hidden">
-              <div
-                class="aspect-square flex items-center justify-center p-12"
-                style="
-                  background: linear-gradient(135deg, #fef9e7 0%, #fff 100%);
-                "
-              >
-                <svg viewbox="0 0 200 200" class="w-full h-full">
-                  <rect x="30" y="70" width="140" height="12" fill="#1a1a1a" />
-                  <rect x="40" y="82" width="12" height="70" fill="#e63946" />
-                  <rect x="90" y="82" width="12" height="70" fill="#457b9d" />
-                  <rect x="140" y="82" width="12" height="70" fill="#f1c40f" />
-                  <circle cx="46" cy="157" r="8" fill="#1a1a1a" />
-                  <circle cx="96" cy="157" r="8" fill="#1a1a1a" />
-                  <circle cx="146" cy="157" r="8" fill="#1a1a1a" />
-                </svg>
-              </div>
-              <div class="p-6">
-                <h3 id="product-1-name" class="text-2xl font-light mb-2">
-                  Mesa Oslo
-                </h3>
-                <p class="opacity-70">Roble natural</p>
-              </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/1.png"
+                alt="Galería 1"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
             </div>
-            <!-- Product 2 -->
-            <div class="product-card hover-lift overflow-hidden">
-              <div
-                class="aspect-square flex items-center justify-center p-12"
-                style="
-                  background: linear-gradient(135deg, #fef9e7 0%, #fff 100%);
-                "
-              >
-                <svg viewbox="0 0 200 200" class="w-full h-full">
-                  <rect
-                    x="60"
-                    y="50"
-                    width="80"
-                    height="70"
-                    rx="4"
-                    fill="#457b9d"
-                    opacity="0.9"
-                  />
-                  <rect x="70" y="120" width="14" height="60" fill="#e63946" />
-                  <rect x="116" y="120" width="14" height="60" fill="#e63946" />
-                  <rect x="50" y="115" width="100" height="10" fill="#f1c40f" />
-                  <circle cx="77" cy="70" r="6" fill="#fef9e7" />
-                  <circle cx="123" cy="70" r="6" fill="#fef9e7" />
-                  <rect
-                    x="85"
-                    y="85"
-                    width="30"
-                    height="3"
-                    fill="#fef9e7"
-                    rx="2"
-                  />
-                </svg>
-              </div>
-              <div class="p-6">
-                <h3 id="product-2-name" class="text-2xl font-light mb-2">
-                  Silla Zen
-                </h3>
-                <p class="opacity-70">Nogal oscuro</p>
-              </div>
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/2.png"
+                alt="Galería 2"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
             </div>
-            <!-- Product 3 -->
-            <div class="product-card hover-lift overflow-hidden">
-              <div
-                class="aspect-square flex items-center justify-center p-12"
-                style="
-                  background: linear-gradient(135deg, #fef9e7 0%, #fff 100%);
-                "
-              >
-                <svg viewbox="0 0 200 200" class="w-full h-full">
-                  <rect
-                    x="45"
-                    y="40"
-                    width="110"
-                    height="120"
-                    fill="none"
-                    stroke="#1a1a1a"
-                    stroke-width="4"
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/6.png"
+                alt="Galería 3"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/3.png"
+                alt="Galería 4"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/7.png"
+                alt="Galería 5"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/4.png"
+                alt="Galería 6"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/5.png"
+                alt="Galería 7"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <div
+              class="gallery-item hover-lift overflow-hidden aspect-square border-4"
+            >
+              <img
+                src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/8.png"
+                alt="Galería 8"
+                class="w-full h-full object-cover"
+                onerror="this.style.display='none';"
+              />
+            </div>
+          </div>
+          <!-- Slideshow Section -->
+          <div class="mt-12 max-w-4xl mx-auto">
+            <div
+              id="slideshow"
+              class="relative overflow-hidden border-4"
+              style="aspect-ratio: 16/9"
+            >
+              <div class="slideshow-container w-full h-full relative">
+                <div
+                  class="slide active w-full h-full absolute top-0 left-0 opacity-100 transition-opacity duration-500"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/11.png"
+                    alt="Diapositiva 1"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';"
                   />
-                  <rect x="45" y="70" width="110" height="3" fill="#e63946" />
-                  <rect x="45" y="115" width="110" height="3" fill="#457b9d" />
-                  <rect x="40" y="35" width="10" height="130" fill="#f1c40f" />
-                  <rect x="150" y="35" width="10" height="130" fill="#f1c40f" />
-                  <circle cx="80" cy="52" r="8" fill="#e63946" />
-                  <rect
-                    x="105"
-                    y="85"
-                    width="35"
-                    height="20"
-                    fill="#457b9d"
-                    opacity="0.7"
+                </div>
+                <div
+                  class="slide w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-500"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/22.png"
+                    alt="Diapositiva 2"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';"
+                  />
+                </div>
+                <div
+                  class="slide w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-500"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/33.png"
+                    alt="Diapositiva 3"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';"
+                  />
+                </div>
+                <div
+                  class="slide w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-500"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/44.png"
+                    alt="Diapositiva 4"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';"
+                  />
+                </div>
+                <div
+                  class="slide w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-500"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/frontenddeveloper2025dev/bauhaus/refs/heads/main/55.png"
+                    alt="Diapositiva 5"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';"
+                  />
+                </div>
+              </div>
+              <!-- Navigation Buttons -->
+              <button
+                id="prev-slide"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
                   />
                 </svg>
-              </div>
-              <div class="p-6">
-                <h3 id="product-3-name" class="text-2xl font-light mb-2">
-                  Estantería Nordic
-                </h3>
-                <p class="opacity-70">Fresno claro</p>
+              </button>
+              <button
+                id="next-slide"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+              <!-- Indicators -->
+              <div
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"
+              >
+                <button
+                  class="indicator w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300"
+                  data-slide="0"
+                ></button>
+                <button
+                  class="indicator w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300"
+                  data-slide="1"
+                ></button>
+                <button
+                  class="indicator w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300"
+                  data-slide="2"
+                ></button>
+                <button
+                  class="indicator w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300"
+                  data-slide="3"
+                ></button>
+                <button
+                  class="indicator w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300"
+                  data-slide="4"
+                ></button>
               </div>
             </div>
           </div>
         </div>
       </section>
       <!-- Contact Section -->
-      <section id="contacto" class="py-24 px-6">
+      <section id="contacto" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
-          <h2 id="contact-title" class="text-4xl font-bold mb-12 text-center">
+          <h2
+            id="contact-title"
+            class="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center"
+          >
             Contáctanos
           </h2>
-          <div class="grid md:grid-cols-2 gap-12">
+          <div class="grid lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             <!-- Contact Info -->
-            <div class="space-y-6">
+            <div class="space-y-6 lg:col-span-2">
               <div>
-                <h3 class="text-2xl font-bold mb-4">Información de Contacto</h3>
+                <h3 class="text-xl sm:text-2xl font-bold mb-4">
+                  Información de Contacto
+                </h3>
                 <div class="space-y-4">
                   <div class="flex items-start gap-3">
                     <svg
-                      class="w-6 h-6 mt-1 flex-shrink-0"
+                      class="w-5 h-5 sm:w-6 sm:h-6 mt-1 flex-shrink-0"
                       fill="currentColor"
                       viewbox="0 0 20 20"
                     >
@@ -293,7 +432,7 @@
                         clip-rule="evenodd"
                       />
                     </svg>
-                    <div>
+                    <div class="text-sm sm:text-base">
                       <p class="font-bold">Dirección:</p>
                       <p>Toltecas 166</p>
                       <p>San Pedro de los Pinos</p>
@@ -302,7 +441,7 @@
                   </div>
                   <div class="flex items-center gap-3">
                     <svg
-                      class="w-6 h-6 flex-shrink-0"
+                      class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
                       fill="currentColor"
                       viewbox="0 0 20 20"
                     >
@@ -310,14 +449,14 @@
                         d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
                       />
                     </svg>
-                    <div>
+                    <div class="text-sm sm:text-base">
                       <p class="font-bold">Teléfono:</p>
                       <p>56 1067 7516</p>
                     </div>
                   </div>
                   <div class="flex items-center gap-3">
                     <svg
-                      class="w-6 h-6 flex-shrink-0"
+                      class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
                       fill="currentColor"
                       viewbox="0 0 20 20"
                     >
@@ -328,7 +467,7 @@
                         d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
                       />
                     </svg>
-                    <div>
+                    <div class="text-sm sm:text-base">
                       <p class="font-bold">Email:</p>
                       <p>info@minima.com</p>
                     </div>
@@ -337,17 +476,19 @@
               </div>
               <!-- Social Media -->
               <div>
-                <h3 class="text-2xl font-bold mb-4">Redes Sociales</h3>
-                <div class="flex flex-wrap gap-4">
+                <h3 class="text-xl sm:text-2xl font-bold mb-4">
+                  Redes Sociales
+                </h3>
+                <div class="flex flex-wrap gap-3 sm:gap-4">
                   <a
                     href="https://www.tiktok.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    class="social-button w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
                     title="TikTok"
                   >
                     <svg
-                      class="w-6 h-6"
+                      class="w-5 h-5 sm:w-6 sm:h-6"
                       fill="currentColor"
                       viewbox="0 0 24 24"
                     >
@@ -359,11 +500,11 @@
                     href="https://www.instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    class="social-button w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
                     title="Instagram"
                   >
                     <svg
-                      class="w-6 h-6"
+                      class="w-5 h-5 sm:w-6 sm:h-6"
                       fill="currentColor"
                       viewbox="0 0 24 24"
                     >
@@ -375,11 +516,11 @@
                     href="https://www.facebook.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    class="social-button w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
                     title="Facebook"
                   >
                     <svg
-                      class="w-6 h-6"
+                      class="w-5 h-5 sm:w-6 sm:h-6"
                       fill="currentColor"
                       viewbox="0 0 24 24"
                     >
@@ -391,11 +532,11 @@
                     href="https://www.pinterest.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    class="social-button w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
                     title="Pinterest"
                   >
                     <svg
-                      class="w-6 h-6"
+                      class="w-5 h-5 sm:w-6 sm:h-6"
                       fill="currentColor"
                       viewbox="0 0 24 24"
                     >
@@ -407,11 +548,11 @@
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="social-button w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    class="social-button w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition-all duration-300 hover:scale-110"
                     title="GitHub"
                   >
                     <svg
-                      class="w-6 h-6"
+                      class="w-5 h-5 sm:w-6 sm:h-6"
                       fill="currentColor"
                       viewbox="0 0 24 24"
                     >
@@ -425,53 +566,47 @@
             <!-- Chat Bot Widget -->
             <div
               id="bot-widget"
-              class="rounded-none border-4 overflow-hidden flex flex-col h-[500px]"
+              class="rounded-none border-2 overflow-hidden flex flex-col h-[280px] lg:h-[320px]"
             >
-              <div id="bot-header" class="p-4 flex items-center gap-3">
+              <div id="bot-header" class="p-2 flex items-center gap-2">
                 <div
-                  class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+                  class="w-6 h-6 rounded-full flex items-center justify-center text-white font-bold text-xs"
                 >
-                  <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20">
-                    <path
-                      fill-rule="evenodd"
-                      d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+                  AI
                 </div>
-                <div>
+                <div class="text-xs">
                   <p class="font-bold">Asistente Virtual</p>
-                  <p class="text-sm opacity-80">En línea</p>
+                  <p class="text-xs opacity-80">En línea</p>
                 </div>
               </div>
               <div
                 id="bot-messages"
-                class="flex-1 p-4 overflow-y-auto space-y-3"
+                class="flex-1 p-2 overflow-y-auto space-y-1.5"
               >
-                <div class="flex gap-2">
+                <div class="flex gap-1.5">
                   <div
-                    class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold"
+                    class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold"
                   >
                     AI
                   </div>
-                  <div class="bot-message max-w-[80%] p-3 rounded-lg">
-                    <p class="text-sm">
-                      ¡Hola! 👋 Bienvenido a MINIMA. ¿En qué puedo ayudarte hoy?
+                  <div class="bot-message max-w-[85%] p-1.5 rounded-lg">
+                    <p class="text-xs">
+                      ¡Hola! 👋 Bienvenido a MINIMA. ¿En qué puedo ayudarte?
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="p-4 border-t">
-                <form id="bot-form" class="flex gap-2">
+              <div class="p-1.5 border-t">
+                <form id="bot-form" class="flex gap-1.5">
                   <input
                     type="text"
                     id="bot-input"
-                    placeholder="Escribe tu mensaje..."
-                    class="flex-1 px-4 py-2 border-2 rounded-none focus:outline-none"
+                    placeholder="Escribe..."
+                    class="flex-1 px-2 py-1 border rounded-none focus:outline-none text-xs"
                   />
                   <button
                     type="submit"
-                    class="bot-send-button px-6 py-2 rounded-none transition-all duration-300 hover:opacity-90"
+                    class="bot-send-button px-2 py-1 rounded-none transition-all duration-300 hover:opacity-90 text-xs"
                   >
                     Enviar
                   </button>
@@ -482,9 +617,9 @@
         </div>
       </section>
       <!-- Footer -->
-      <footer id="footer" class="py-12 px-6 border-t">
+      <footer id="footer" class="py-8 sm:py-10 md:py-12 px-4 sm:px-6 border-t">
         <div class="max-w-7xl mx-auto text-center">
-          <p id="footer-text" class="opacity-70">
+          <p id="footer-text" class="opacity-70 text-sm sm:text-base">
             © 2024 Muebles Minimalistas. Diseño artesanal con madera sostenible.
           </p>
         </div>
@@ -492,23 +627,20 @@
     </div>
     <script>
       const defaultConfig = {
-        background_color: "#fef9e7",
+        background_color: "#f4f1de",
         surface_color: "#ffffff",
         text_color: "#1a1a1a",
         primary_action_color: "#e63946",
-        secondary_action_color: "#457b9d",
+        secondary_action_color: "#0a7ea4",
         font_family: "Montserrat",
         font_size: 16,
         hero_title: "Diseño minimalista en madera",
         hero_subtitle:
           "Muebles que transforman espacios en experiencias únicas",
-        cta_button: "Explorar Colección",
+        cta_button: "Explorar Galería",
         about_title: "Nuestra Filosofía",
         about_text:
           "Creamos piezas únicas que combinan la calidez natural de la madera con líneas limpias y funcionalidad moderna. Cada mueble es una obra de arte diseñada para perdurar.",
-        product_1_name: "Mesa Oslo",
-        product_2_name: "Silla Zen",
-        product_3_name: "Estantería Nordic",
         contact_title: "Contáctanos",
         footer_text:
           "© 2024 Muebles Minimalistas. Diseño artesanal con madera sostenible.",
@@ -519,37 +651,35 @@
         const baseFontStack = "Arial, sans-serif";
         const baseSize = config.font_size || defaultConfig.font_size;
 
-        // Background colors
+        // Background colors - Fixed Bauhaus color scheme by section (not affected by config changes)
         document.getElementById("app").style.backgroundColor =
           config.background_color || defaultConfig.background_color;
-        document.getElementById("hero").style.backgroundColor =
-          config.background_color || defaultConfig.background_color;
-        document.getElementById("nosotros").style.backgroundColor =
-          config.surface_color || defaultConfig.surface_color;
-        document.getElementById("coleccion").style.backgroundColor =
-          config.background_color || defaultConfig.background_color;
-        document.getElementById("contacto").style.backgroundColor =
-          config.surface_color || defaultConfig.surface_color;
+        document.getElementById("hero").style.backgroundColor = "#f4c430"; // Yellow Bauhaus - FIXED
+        document.getElementById("nosotros").style.backgroundColor = "#e63946"; // Red Bauhaus - FIXED
+        document.getElementById("coleccion").style.backgroundColor = "#0a7ea4"; // Blue Bauhaus - FIXED
+        document.getElementById("contacto").style.backgroundColor = "#f4c430"; // Yellow Bauhaus - FIXED
         document.getElementById("footer").style.backgroundColor =
-          config.background_color || defaultConfig.background_color;
+          config.background_color || defaultConfig.background_color; // Beige
         document.getElementById("footer").style.borderTopColor =
-          config.secondary_action_color || defaultConfig.secondary_action_color;
+          config.text_color || defaultConfig.text_color;
 
         // Navigation
         document.getElementById("nav").style.backgroundColor =
-          (config.background_color || defaultConfig.background_color) + "f0";
-        document.getElementById("logo").style.color =
-          config.text_color || defaultConfig.text_color;
-        document.getElementById(
-          "logo"
-        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
-        document.getElementById("logo").style.fontSize = `${baseSize * 1.5}px`;
+          (config.background_color || defaultConfig.background_color) + "f5";
 
         const navLinks = document.querySelectorAll("nav a");
         navLinks.forEach((link) => {
           link.style.color = config.text_color || defaultConfig.text_color;
           link.style.fontFamily = `${customFont}, ${baseFontStack}`;
           link.style.fontSize = `${baseSize}px`;
+        });
+
+        // Mobile menu button
+        const menuButton = document.getElementById("mobile-menu-button");
+        const menuSpans = menuButton.querySelectorAll("span");
+        menuSpans.forEach((span) => {
+          span.style.backgroundColor =
+            config.text_color || defaultConfig.text_color;
         });
 
         // Hero section
@@ -560,9 +690,15 @@
         document.getElementById(
           "hero-title"
         ).style.fontFamily = `${customFont}, ${baseFontStack}`;
-        document.getElementById("hero-title").style.fontSize = `${
-          baseSize * 3.5
-        }px`;
+        const heroTitleSize =
+          window.innerWidth < 640
+            ? baseSize * 2.5
+            : window.innerWidth < 768
+            ? baseSize * 3
+            : baseSize * 3.5;
+        document.getElementById(
+          "hero-title"
+        ).style.fontSize = `${heroTitleSize}px`;
 
         document.getElementById("hero-subtitle").textContent =
           config.hero_subtitle || defaultConfig.hero_subtitle;
@@ -592,7 +728,7 @@
         document.getElementById("about-title").textContent =
           config.about_title || defaultConfig.about_title;
         document.getElementById("about-title").style.color =
-          config.text_color || defaultConfig.text_color;
+          config.surface_color || defaultConfig.surface_color;
         document.getElementById(
           "about-title"
         ).style.fontFamily = `${customFont}, ${baseFontStack}`;
@@ -603,7 +739,7 @@
         document.getElementById("about-text").textContent =
           config.about_text || defaultConfig.about_text;
         document.getElementById("about-text").style.color =
-          config.text_color || defaultConfig.text_color;
+          config.surface_color || defaultConfig.surface_color;
         document.getElementById(
           "about-text"
         ).style.fontFamily = `${customFont}, ${baseFontStack}`;
@@ -611,61 +747,46 @@
           baseSize * 1.125
         }px`;
 
+        const aboutParagraphs = document.querySelectorAll("#nosotros p");
+        aboutParagraphs.forEach((p) => {
+          p.style.color = config.surface_color || defaultConfig.surface_color;
+        });
+
         document.getElementById("about-visual").style.backgroundColor =
-          config.background_color || defaultConfig.background_color;
-        document.getElementById("about-visual").style.color =
-          config.primary_action_color || defaultConfig.primary_action_color;
+          "transparent";
 
-        // Products section
-        const productCards = document.querySelectorAll(".product-card");
-        productCards.forEach((card) => {
-          card.style.backgroundColor =
+        // Gallery section
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        galleryItems.forEach((item) => {
+          item.style.borderColor =
             config.surface_color || defaultConfig.surface_color;
-          card.style.color = config.text_color || defaultConfig.text_color;
-          card.style.border = `3px solid ${
-            config.text_color || defaultConfig.text_color
-          }`;
         });
 
-        document.getElementById("product-1-name").textContent =
-          config.product_1_name || defaultConfig.product_1_name;
-        document.getElementById(
-          "product-1-name"
-        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
-        document.getElementById("product-1-name").style.fontSize = `${
-          baseSize * 1.5
-        }px`;
+        // Slideshow
+        const slideshow = document.getElementById("slideshow");
+        slideshow.style.borderColor =
+          config.surface_color || defaultConfig.surface_color;
 
-        document.getElementById("product-2-name").textContent =
-          config.product_2_name || defaultConfig.product_2_name;
-        document.getElementById(
-          "product-2-name"
-        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
-        document.getElementById("product-2-name").style.fontSize = `${
-          baseSize * 1.5
-        }px`;
-
-        document.getElementById("product-3-name").textContent =
-          config.product_3_name || defaultConfig.product_3_name;
-        document.getElementById(
-          "product-3-name"
-        ).style.fontFamily = `${customFont}, ${baseFontStack}`;
-        document.getElementById("product-3-name").style.fontSize = `${
-          baseSize * 1.5
-        }px`;
-
-        const productDescriptions =
-          document.querySelectorAll(".product-card p");
-        productDescriptions.forEach((p) => {
-          p.style.fontFamily = `${customFont}, ${baseFontStack}`;
-          p.style.fontSize = `${baseSize}px`;
+        const slideButtons = document.querySelectorAll(
+          "#prev-slide, #next-slide"
+        );
+        slideButtons.forEach((btn) => {
+          btn.style.backgroundColor =
+            config.primary_action_color || defaultConfig.primary_action_color;
+          btn.style.color = config.surface_color || defaultConfig.surface_color;
         });
 
-        const collectionTitle = document.querySelector("#coleccion h2");
-        collectionTitle.style.color =
-          config.text_color || defaultConfig.text_color;
-        collectionTitle.style.fontFamily = `${customFont}, ${baseFontStack}`;
-        collectionTitle.style.fontSize = `${baseSize * 3}px`;
+        const indicators = document.querySelectorAll(".indicator");
+        indicators.forEach((indicator, index) => {
+          if (indicator.classList.contains("active")) {
+            indicator.style.backgroundColor =
+              config.primary_action_color || defaultConfig.primary_action_color;
+          } else {
+            indicator.style.backgroundColor =
+              config.surface_color || defaultConfig.surface_color;
+            indicator.style.opacity = "0.5";
+          }
+        });
 
         // Contact section
         document.getElementById("contact-title").textContent =
@@ -679,7 +800,6 @@
           baseSize * 2.5
         }px`;
 
-        // Contact info styling
         const contactSection = document.getElementById("contacto");
         const contactHeaders = contactSection.querySelectorAll("h3");
         contactHeaders.forEach((header) => {
@@ -735,12 +855,12 @@
           msg.style.backgroundColor =
             config.surface_color || defaultConfig.surface_color;
           msg.style.color = config.text_color || defaultConfig.text_color;
-          msg.style.border = `2px solid ${
+          msg.style.border = `1px solid ${
             config.secondary_action_color ||
             defaultConfig.secondary_action_color
           }`;
           msg.style.fontFamily = `${customFont}, ${baseFontStack}`;
-          msg.style.fontSize = `${baseSize * 0.875}px`;
+          msg.style.fontSize = `${baseSize * 0.75}px`;
         });
 
         const userMessage = document.querySelectorAll(".user-message");
@@ -748,9 +868,9 @@
           msg.style.backgroundColor =
             config.secondary_action_color ||
             defaultConfig.secondary_action_color;
-          msg.style.color = config.text_color || defaultConfig.text_color;
+          msg.style.color = config.surface_color || defaultConfig.surface_color;
           msg.style.fontFamily = `${customFont}, ${baseFontStack}`;
-          msg.style.fontSize = `${baseSize * 0.875}px`;
+          msg.style.fontSize = `${baseSize * 0.75}px`;
         });
 
         const botInput = document.getElementById("bot-input");
@@ -758,7 +878,7 @@
           config.secondary_action_color || defaultConfig.secondary_action_color;
         botInput.style.color = config.text_color || defaultConfig.text_color;
         botInput.style.fontFamily = `${customFont}, ${baseFontStack}`;
-        botInput.style.fontSize = `${baseSize}px`;
+        botInput.style.fontSize = `${baseSize * 0.875}px`;
 
         const botSendButton = document.querySelector(".bot-send-button");
         botSendButton.style.backgroundColor =
@@ -766,13 +886,13 @@
         botSendButton.style.color =
           config.surface_color || defaultConfig.surface_color;
         botSendButton.style.fontFamily = `${customFont}, ${baseFontStack}`;
-        botSendButton.style.fontSize = `${baseSize}px`;
+        botSendButton.style.fontSize = `${baseSize * 0.875}px`;
 
-        const botHeaderIcon = botHeader.querySelector(".w-10");
+        const botHeaderIcon = botHeader.querySelector(".w-6");
         botHeaderIcon.style.backgroundColor =
           config.secondary_action_color || defaultConfig.secondary_action_color;
 
-        const botAvatars = document.querySelectorAll("#bot-messages .w-8");
+        const botAvatars = document.querySelectorAll("#bot-messages .w-5");
         botAvatars.forEach((avatar) => {
           avatar.style.backgroundColor =
             config.secondary_action_color ||
@@ -863,18 +983,6 @@
           ["about_title", config.about_title || defaultConfig.about_title],
           ["about_text", config.about_text || defaultConfig.about_text],
           [
-            "product_1_name",
-            config.product_1_name || defaultConfig.product_1_name,
-          ],
-          [
-            "product_2_name",
-            config.product_2_name || defaultConfig.product_2_name,
-          ],
-          [
-            "product_3_name",
-            config.product_3_name || defaultConfig.product_3_name,
-          ],
-          [
             "contact_title",
             config.contact_title || defaultConfig.contact_title,
           ],
@@ -891,6 +999,21 @@
           mapToEditPanelValues,
         });
       }
+
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("active");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.remove("active");
+        });
+      });
 
       // Smooth scroll for navigation
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -913,6 +1036,86 @@
             .scrollIntoView({ behavior: "smooth" });
         });
 
+      // Slideshow functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const indicators = document.querySelectorAll(".indicator");
+      const totalSlides = slides.length;
+      let autoSlideInterval;
+
+      function showSlide(index) {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+          slide.style.opacity = "0";
+        });
+
+        indicators.forEach((indicator) => {
+          indicator.classList.remove("active");
+          if (window.elementSdk && window.elementSdk.config) {
+            const config = window.elementSdk.config;
+            indicator.style.backgroundColor =
+              config.surface_color || defaultConfig.surface_color;
+            indicator.style.opacity = "0.5";
+          }
+        });
+
+        currentSlide = (index + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add("active");
+        slides[currentSlide].style.opacity = "1";
+        indicators[currentSlide].classList.add("active");
+
+        if (window.elementSdk && window.elementSdk.config) {
+          const config = window.elementSdk.config;
+          indicators[currentSlide].style.backgroundColor =
+            config.primary_action_color || defaultConfig.primary_action_color;
+          indicators[currentSlide].style.opacity = "1";
+        }
+      }
+
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+      }
+
+      document
+        .getElementById("next-slide")
+        .addEventListener("click", function () {
+          stopAutoSlide();
+          nextSlide();
+          startAutoSlide();
+        });
+
+      document
+        .getElementById("prev-slide")
+        .addEventListener("click", function () {
+          stopAutoSlide();
+          prevSlide();
+          startAutoSlide();
+        });
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", function () {
+          stopAutoSlide();
+          showSlide(index);
+          startAutoSlide();
+        });
+      });
+
+      // Initialize slideshow
+      showSlide(0);
+      startAutoSlide();
+
       // Chat Bot Functionality
       const botForm = document.getElementById("bot-form");
       const botInput = document.getElementById("bot-input");
@@ -931,7 +1134,7 @@
         envio:
           "Realizamos envíos a toda la República Mexicana. El costo depende de tu ubicación.",
         catalogo:
-          "Puedes ver nuestra colección destacada en esta misma página. ¡Desplázate hacia arriba!",
+          "Puedes ver nuestra galería en esta misma página. ¡Despl��zate hacia arriba!",
         muebles:
           "Ofrecemos mesas, sillas y estanterías de diseño minimalista en madera natural.",
         madera: "Trabajamos con roble, nogal y fresno de origen sostenible.",
@@ -943,20 +1146,20 @@
 
       function addMessage(text, isUser = false) {
         const messageDiv = document.createElement("div");
-        messageDiv.className = "flex gap-2" + (isUser ? " justify-end" : "");
+        messageDiv.className = "flex gap-1.5" + (isUser ? " justify-end" : "");
 
         const avatar = document.createElement("div");
         avatar.className =
-          "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold";
+          "w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold";
         avatar.textContent = isUser ? "TÚ" : "AI";
 
         const bubble = document.createElement("div");
         bubble.className =
           (isUser ? "user-message" : "bot-message") +
-          " max-w-[80%] p-3 rounded-lg";
+          " max-w-[85%] p-1.5 rounded-lg";
 
         const paragraph = document.createElement("p");
-        paragraph.className = "text-sm";
+        paragraph.className = "text-xs";
         paragraph.textContent = text;
 
         bubble.appendChild(paragraph);
@@ -983,18 +1186,19 @@
             config.secondary_action_color ||
             defaultConfig.secondary_action_color;
           paragraph.style.fontFamily = `${customFont}, ${baseFontStack}`;
-          paragraph.style.fontSize = `${baseSize * 0.875}px`;
+          paragraph.style.fontSize = `${baseSize * 0.75}px`;
 
           if (isUser) {
             bubble.style.backgroundColor =
               config.secondary_action_color ||
               defaultConfig.secondary_action_color;
-            bubble.style.color = config.text_color || defaultConfig.text_color;
+            bubble.style.color =
+              config.surface_color || defaultConfig.surface_color;
           } else {
             bubble.style.backgroundColor =
               config.surface_color || defaultConfig.surface_color;
             bubble.style.color = config.text_color || defaultConfig.text_color;
-            bubble.style.border = `2px solid ${
+            bubble.style.border = `1px solid ${
               config.secondary_action_color ||
               defaultConfig.secondary_action_color
             }`;
@@ -1040,7 +1244,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'9b219de3c58beef2',t:'MTc2NjQyNzQ1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9b21feb036c6eef2',t:'MTc2NjQzMTQxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
