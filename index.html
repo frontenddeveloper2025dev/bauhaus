@@ -1135,27 +1135,119 @@
       const botInput = document.getElementById("bot-input");
       const botMessagesContainer = document.getElementById("bot-messages");
 
-      const botResponses = {
-        hola: "¡Hola! 👋 Estoy aquí para ayudarte con tus dudas sobre nuestros muebles y artículos.",
-        horario:
-          "Nuestro horario de atención es de Lunes a Viernes de 9:00 AM a 6:00 PM.",
-        direccion:
-          "Nos encontramos en Toltecas 166, San Pedro de los Pinos, Ciudad de México, 01180.",
-        telefono: "Puedes llamarnos al 56 1067 7516.",
-        email: "Escríbenos a indigolilobarcena@delulufuture.dev",
-        precio:
-          "Los precios varían según el modelo. Contáctanos para recibir una cotización personalizada.",
-        envio:
-          "Realizamos envíos a toda la República Mexicana. El costo depende de tu ubicación.",
-        catalogo:
-          "Puedes ver nuestra galería en esta misma página. ¡Desplázate hacia arriba!",
-        muebles: "Ofrecemos muebles y decoración minimalista.",
-        madera: "Materiales amigables con el medio ambiente.",
-        garantia:
-          "Todos nuestros muebles tienen garantía de 2 años contra defectos de fabricación.",
-        default:
-          "Gracias por tu mensaje. Para más información específica, llámanos al 56 1067 7516 o escríbenos a indigolilobarcena@delulufuture.dev 📧",
-      };
+      const botResponses = [
+        {
+          keywords: [
+            "hola",
+            "hi",
+            "hello",
+            "buenos dias",
+            "buenas tardes",
+            "buenas noches",
+            "saludos",
+          ],
+          response:
+            "¡Hola! 👋 Estoy aquí para ayudarte con tus dudas sobre nuestros muebles y artículos.",
+        },
+        {
+          keywords: [
+            "horario",
+            "hora",
+            "abierto",
+            "abren",
+            "cierran",
+            "atienden",
+          ],
+          response:
+            "Nuestro horario de atención es de Lunes a Viernes de 9:00 AM a 6:00 PM.",
+        },
+        {
+          keywords: [
+            "direccion",
+            "ubicacion",
+            "donde estan",
+            "donde",
+            "domicilio",
+            "localizado",
+          ],
+          response:
+            "Nos encontramos en Toltecas 166, San Pedro de los Pinos, Ciudad de México, 01180.",
+        },
+        {
+          keywords: [
+            "telefono",
+            "tel",
+            "llamar",
+            "numero",
+            "contacto",
+            "celular",
+            "whatsapp",
+          ],
+          response:
+            "📞 Teléfono: 56 1067 7516\n📧 Email: indigolilobarcena@delulufuture.dev",
+        },
+        {
+          keywords: ["email", "correo", "mail", "escribir", "escribirles"],
+          response:
+            "📧 Email: indigolilobarcena@delulufuture.dev\n📞 Teléfono: 56 1067 7516",
+        },
+        {
+          keywords: [
+            "envio",
+            "envios",
+            "entrega",
+            "entregar",
+            "paqueteria",
+            "shipping",
+          ],
+          response:
+            "Realizamos envíos a toda la República Mexicana. El costo depende de tu ubicación.",
+        },
+        {
+          keywords: [
+            "catalogo",
+            "galeria",
+            "productos",
+            "ver",
+            "mostrar",
+            "coleccion",
+          ],
+          response:
+            "Puedes ver nuestra galería en esta misma página. ¡Desplázate hacia arriba!",
+        },
+        {
+          keywords: [
+            "muebles",
+            "mueble",
+            "ofrecen",
+            "venden",
+            "tienen",
+            "decoracion",
+          ],
+          response: "Ofrecemos muebles y decoración minimalista.",
+        },
+        {
+          keywords: [
+            "madera",
+            "material",
+            "materiales",
+            "sostenible",
+            "ecologico",
+          ],
+          response: "Materiales amigables con el medio ambiente.",
+        },
+        {
+          keywords: [
+            "garantia",
+            "garantía",
+            "defecto",
+            "reparacion",
+            "devolucion",
+          ],
+          response:
+            "Todos nuestros muebles tienen garantía de 2 años contra defectos de fabricación.",
+        },
+      ];
 
       function addMessage(text, isUser = false) {
         const messageDiv = document.createElement("div");
@@ -1222,13 +1314,17 @@
       function getBotResponse(userMessage) {
         const message = userMessage.toLowerCase().trim();
 
-        for (const [key, response] of Object.entries(botResponses)) {
-          if (message.includes(key)) {
-            return response;
+        // Buscar coincidencias en las palabras clave
+        for (const item of botResponses) {
+          for (const keyword of item.keywords) {
+            if (message.includes(keyword)) {
+              return item.response;
+            }
           }
         }
 
-        return botResponses.default;
+        // Respuesta por defecto
+        return "Gracias por tu mensaje. Para más información específica, llámanos al 56 1067 7516 o escríbenos a indigolilobarcena@delulufuture.dev 📧";
       }
 
       botForm.addEventListener("submit", function (e) {
@@ -1257,7 +1353,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'9b2a36c6353beef2',t:'MTc2NjUxNzYwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9b2a4592d56aeef2',t:'MTc2NjUxODIwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
