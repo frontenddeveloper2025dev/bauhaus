@@ -446,31 +446,13 @@
                       viewbox="0 0 20 20"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                        clip-rule="evenodd"
+                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
                       />
                     </svg>
                     <div class="text-sm sm:text-base">
-                      <p class="font-bold">Dirección:</p>
-                      <p>Toltecas 166</p>
-                      <p>San Pedro de los Pinos</p>
-                      <p>Ciudad de México, 01180</p>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
-                      fill="currentColor"
-                      viewbox="0 0 20 20"
-                    >
-                      <path
-                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                      />
-                    </svg>
-                    <div class="text-sm sm:text-base">
-                      <p class="font-bold">Teléfono:</p>
-                      <p>56 1067 7516</p>
+                      <p class="font-bold">Tienda Online</p>
+                      <p>Envíos a toda la República Mexicana</p>
+                      <p>Entrega a domicilio por paquetería</p>
                     </div>
                   </div>
                   <div class="flex items-center gap-3">
@@ -488,7 +470,7 @@
                     </svg>
                     <div class="text-sm sm:text-base">
                       <p class="font-bold">Email:</p>
-                      <p>indigolilobarcena@delulufuture.dev</p>
+                      <p>hola@minmo.com</p>
                     </div>
                   </div>
                 </div>
@@ -1159,7 +1141,7 @@
             "atienden",
           ],
           response:
-            "Nuestro horario de atención es de Lunes a Viernes de 9:00 AM a 6:00 PM.",
+            "Somos una tienda 100% online. Puedes contactarnos por email en cualquier momento y te responderemos a la brevedad.",
         },
         {
           keywords: [
@@ -1169,9 +1151,11 @@
             "donde",
             "domicilio",
             "localizado",
+            "tienda",
+            "local",
           ],
           response:
-            "Nos encontramos en Toltecas 166, San Pedro de los Pinos, Ciudad de México, 01180.",
+            "Somos una tienda 100% online 🛒 Realizamos envíos a toda la República Mexicana por paquetería.",
         },
         {
           keywords: [
@@ -1183,13 +1167,11 @@
             "celular",
             "whatsapp",
           ],
-          response:
-            "📞 Teléfono: 56 1067 7516\n📧 Email: indigolilobarcena@delulufuture.dev",
+          response: "Para contactarnos escríbenos a: hola@minmo.com 📧",
         },
         {
           keywords: ["email", "correo", "mail", "escribir", "escribirles"],
-          response:
-            "📧 Email: indigolilobarcena@delulufuture.dev\n📞 Teléfono: 56 1067 7516",
+          response: "Escríbenos a: hola@minmo.com 📧",
         },
         {
           keywords: [
@@ -1201,7 +1183,7 @@
             "shipping",
           ],
           response:
-            "Realizamos envíos a toda la República Mexicana. El costo depende de tu ubicación.",
+            "📦 Realizamos envíos a toda la República Mexicana por paquetería. El costo depende de tu ubicación y el tamaño del producto.",
         },
         {
           keywords: [
@@ -1213,7 +1195,7 @@
             "coleccion",
           ],
           response:
-            "Puedes ver nuestra galería en esta misma página. ¡Desplázate hacia arriba!",
+            "Puedes ver nuestra galería en esta misma página. ¡Desplázate hacia arriba! 📸",
         },
         {
           keywords: [
@@ -1224,7 +1206,8 @@
             "tienen",
             "decoracion",
           ],
-          response: "Ofrecemos muebles y decoración minimalista.",
+          response:
+            "Ofrecemos muebles y decoración minimalista en madera. Todo hecho con materiales sostenibles.",
         },
         {
           keywords: [
@@ -1234,7 +1217,8 @@
             "sostenible",
             "ecologico",
           ],
-          response: "Materiales amigables con el medio ambiente.",
+          response:
+            "Trabajamos con materiales sostenibles y amigables con el medio ambiente. 🌱",
         },
         {
           keywords: [
@@ -1324,7 +1308,7 @@
         }
 
         // Respuesta por defecto
-        return "Gracias por tu mensaje. Para más información específica, llámanos al 56 1067 7516 o escríbenos a indigolilobarcena@delulufuture.dev 📧";
+        return "Gracias por tu mensaje. Para más información escríbenos a hola@minmo.com 📧";
       }
 
       botForm.addEventListener("submit", function (e) {
@@ -1353,7 +1337,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'9b2a4592d56aeef2',t:'MTc2NjUxODIwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9c01203c73f3ac50',t:'MTc2ODc3MTExNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
